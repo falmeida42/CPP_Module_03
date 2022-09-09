@@ -1,5 +1,9 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) {
+
+}
+
 ClapTrap::ClapTrap(std::string const name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
     std::cout << "ClapTrap " << name << " was created" << std::endl;
@@ -22,7 +26,7 @@ void ClapTrap::attack(const std::string& target) {
 void ClapTrap::takeDamage(unsigned int amount) {
     
     hitPoints -= amount;
-    std::cout << "ClapTrap " << name << " was taked damege of " << amount << " hitPoints. " << name << " have " << hitPoints << "hit points" << std::endl;
+    std::cout << "ClapTrap " << name << " was taked damege of " << amount << " hitPoints. " << name << " have " << hitPoints << " hit points" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
