@@ -11,7 +11,10 @@ private:
     int         attackDamage = 0;
     bool        checkAction();
 public:
+    ClapTrap();
     ClapTrap(std::string const name);
+    ClapTrap(ClapTrap const &copy);
+    ClapTrap    &operator=(ClapTrap const &copy);
     void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
