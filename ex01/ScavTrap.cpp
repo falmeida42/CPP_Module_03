@@ -1,5 +1,18 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() {
+
+    std::cout << "ScavTrap Default was created" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const &copy) {
+    this->name = copy.name;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
+    std::cout << "ScavTrap Copy " << this->name << " was created" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name) {
     this->name = name;
     hitPoints = 100;
@@ -7,6 +20,16 @@ ScavTrap::ScavTrap(std::string name) {
     attackDamage = 20;
     std::cout << "ScavTrap " << name << " was created" << std::endl;
 }
+
+ScavTrap    &ScavTrap::operator=(ScavTrap const &copy) {
+    this->name = copy.name;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
+    std::cout << "ScavTrap Assignment " << this->name << " was created" << std::endl;
+    return (*this);
+}
+
 
 void    ScavTrap::attack(const std::string& target) {
     if (checkAction()) {
