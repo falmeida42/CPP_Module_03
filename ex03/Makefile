@@ -1,8 +1,8 @@
 NAME = diamondTrap
 
-SRC = ClapTrap.cpp ScavTrap.cpp FrapTrap.cpp DiamondTrap.cpp main.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
-FLAGS = -std=c++98 -Wall -Wextra -Werror 
+FLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow
 
 OBJS = $(SRC:.cpp=.o)
 

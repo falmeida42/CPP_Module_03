@@ -1,76 +1,47 @@
 #include "ScavTrap.hpp"
-#include "FrapTrap.hpp"
+#include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
 int main(void)
 {
-    ClapTrap pike("Ragnar");
-    ScavTrap fither("Lion");
-    FrapTrap trap("Almeida");
-    DiamondTrap diamond("Ricardo");
+    srand(time(NULL));
 
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.attack("wolf");
-    pike.takeDamage(8);
-    pike.beRepaired(2);
+	FragTrap *frag = new FragTrap("FR4G");
 
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.attack("wolf");
-    fither.takeDamage(8);
-    fither.beRepaired(2);
-    fither.guardGate();
+	frag->takeDamage(24);
+	frag->beRepaired(50);
+	frag->takeDamage(42);
+	frag->takeDamage(100);
+	frag->beRepaired(125);
 
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.attack("dragon");
-    trap.takeDamage(8);
-    trap.beRepaired(2);
-    trap.highFivesGuys();
 
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.attack("dragon");
-    diamond.takeDamage(12);
-    diamond.beRepaired(2);
-    diamond.highFivesGuys();
-    diamond.guardGate();
-    diamond.whoAmI();
+	std::cout << "---" << std::endl;
+
+	ScavTrap *scav = new ScavTrap("SC4V");
+	scav->takeDamage(24);
+	scav->beRepaired(50);
+	scav->takeDamage(42);
+	scav->takeDamage(100);
+	scav->beRepaired(125);
+
+
+	std::cout << "---" << std::endl;
+
+	ClapTrap clap("CL4P");
+	DiamondTrap *ninja = new DiamondTrap("NINJ4");
+	ninja->takeDamage(24);
+	ninja->beRepaired(50);
+	ninja->takeDamage(42);
+	ninja->takeDamage(100);
+	ninja->beRepaired(125);
+    ninja->whoAmI();
+
+
+	std::cout << "---" << std::endl;
+
+	delete frag;
+	delete scav;
+	delete ninja;
+
+	return (0);
 }

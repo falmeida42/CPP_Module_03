@@ -1,14 +1,17 @@
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
-#include "FrapTrap.hpp"
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FrapTrap, public ScavTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 private:
-    /* data */
+    std::string name;
 public:
+    DiamondTrap();
     DiamondTrap(std::string const name);
+    DiamondTrap(DiamondTrap const &copy);
+    DiamondTrap    &operator=(DiamondTrap const &copy);
     void    attack(const std::string& target);
     void    whoAmI();
     ~DiamondTrap() override; 
